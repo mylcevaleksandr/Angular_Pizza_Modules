@@ -12,16 +12,22 @@
       </div>
     </div>
     <div class="order__form">
-      <input name="al" type="text" class="base-input order__base-input" coolInput
-             [coolInputDefaultBgColor]="'#4890ed'" [coolInputBgColor]="'pink'" id="product-input" placeholder="Пицца"
-             [(ngModel)]="formValues.productTitle">
-      <input type="text" class="base-input order__base-input" coolInput
-             [coolInputDefaultBgColor]="'#4890ed'" [coolInputBgColor]="'pink'" id="address__input"
-             placeholder="Адрес доставки"
+      <span class="p-float-label">
+        <input type="text" class="base-input order__base-input" pInputText id="product-input"
+               [(ngModel)]="formValues.productTitle">
+        <label htmlFor="product-input">Пицца</label>
+      </span>
+      <span class="p-float-label">
+      <input type="text" class="base-input order__base-input" pInputText id="address__input"
              [(ngModel)]="formValues.address">
-      <input type="text" class="base-input order__base-input" coolInput
-             [coolInputDefaultBgColor]="'#4890ed'" [coolInputBgColor]="'pink'" id="phone__input" placeholder="Телефон"
+    <label htmlFor="address__input">Адрес доставки</label>
+      </span>
+      <span class="p-float-label">
+      <input type="text" class="base-input order__base-input" pInputText id="phone__input"
              [(ngModel)]="formValues.phone">
+        <label htmlFor="phone__input">Телефон</label>
+      </span>
+
       <button class="btn order__btn" (click)="createOrder()">Оформить заказ</button>
     </div>
     <div class="order__image">
