@@ -7,6 +7,7 @@ import {MainComponent} from "./main/main.component";
 import {SharedModule} from "../../shared/shared.module";
 import {RouterModule} from "@angular/router";
 import {NgbModalModule} from "@ng-bootstrap/ng-bootstrap";
+import {TuiButtonModule} from "@taiga-ui/core";
 
 
 @NgModule({
@@ -19,7 +20,8 @@ import {NgbModalModule} from "@ng-bootstrap/ng-bootstrap";
     CommonModule,
     RouterModule,
     HomeRoutingModule,
-    NgbModalModule
+    NgbModalModule,
+    TuiButtonModule
   ],
   exports: [
     HomeRoutingModule
