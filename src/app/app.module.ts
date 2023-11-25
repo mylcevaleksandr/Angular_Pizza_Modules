@@ -3,42 +3,39 @@ import {BrowserModule} from '@angular/platform-browser';
 import {AppRoutingModule} from './app-routing.module';
 import {AppComponent} from './app.component';
 import {FormsModule} from "@angular/forms";
-import {HeaderComponent} from './components/common/header/header.component';
-import {FooterComponent} from './components/common/footer/footer.component';
-import {CoolInputDirective} from './directives/cool-input.directive';
-import {ProductService} from "./services/product.service";
-import {AboutComponent} from './components/pages/about/about.component';
-import {MainComponent} from './components/pages/main/main.component';
-import {OrderComponent} from './components/pages/order/order.component';
-import {HTTP_INTERCEPTORS, HttpClientModule} from "@angular/common/http";
-import {AuthInterceptor} from "./auth/auth.interceptor";
-import {ProductsModule} from "./components/products.module";
+import {HttpClientModule} from "@angular/common/http";
+import {CoreModule} from "./core/core.module";
+import {SharedModule} from "./shared/shared.module";
+import {HeaderComponent} from "./shared/layout/header/header.component";
+import {FooterComponent} from "./shared/layout/footer/footer.component";
+import {RouterModule} from "@angular/router";
+import {LayoutComponent} from './views/layout.component';
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import {MatMenuModule} from "@angular/material/menu";
+import {MatIconModule} from "@angular/material/icon";
+import {MatButtonModule} from "@angular/material/button";
 
 @NgModule({
   declarations: [
-    AppComponent,
     HeaderComponent,
     FooterComponent,
-    CoolInputDirective,
-    AboutComponent,
-    MainComponent,
-    OrderComponent,
+    AppComponent,
+    LayoutComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
     HttpClientModule,
-    ProductsModule,
-    AppRoutingModule
+    CoreModule,
+    SharedModule,
+    RouterModule,
+    AppRoutingModule,
+    BrowserAnimationsModule,
+    MatMenuModule,
+    MatIconModule,
+    MatButtonModule
   ],
-  providers: [
-    ProductService,
-    {
-      provide: HTTP_INTERCEPTORS,
-      useClass: AuthInterceptor,
-      multi: true
-    }
-  ],
+  providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule {
