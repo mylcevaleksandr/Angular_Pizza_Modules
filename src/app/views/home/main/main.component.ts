@@ -1,8 +1,8 @@
-import {AfterViewInit, Component, ElementRef, OnDestroy, OnInit, TemplateRef, ViewChild} from '@angular/core';
+import {AfterViewInit, Component, OnDestroy, OnInit, ViewChild} from '@angular/core';
 import {CartService} from "../../../shared/services/cart.service";
 import {from, map, Observable, Subscription} from "rxjs";
-import {NgbModal} from "@ng-bootstrap/ng-bootstrap";
 import {PopupComponent} from "../../../shared/components/popup/popup.component";
+import {environment} from "../../../../environments/environment";
 
 @Component({
   selector: 'app-main',
@@ -11,8 +11,8 @@ import {PopupComponent} from "../../../shared/components/popup/popup.component";
 })
 export class MainComponent implements OnInit, AfterViewInit, OnDestroy {
   lateData: Promise<string> | null = null
-@ViewChild(PopupComponent)
-private popupComponent!:PopupComponent
+  @ViewChild(PopupComponent)
+  private popupComponent!: PopupComponent
   // private promise: Promise<string>
   private observable: Observable<number>
 
@@ -47,6 +47,7 @@ private popupComponent!:PopupComponent
   private subscription: Subscription | null = null
 
   ngOnInit() {
+    console.log(environment.production)
     this.subscription = this.observable
 
       .pipe(
@@ -62,7 +63,7 @@ private popupComponent!:PopupComponent
 
   ngAfterViewInit() {
     setTimeout(() => {
- this.popupComponent.open()
+      this.popupComponent.open()
     }, 2000)
   }
 
