@@ -1,0 +1,16 @@
+{
+  "hosting": {
+    "public": "dist/it-logia40-module-angular-pizza-modules",
+    "ignore": [
+      "firebase.json",
+      "**/.*",
+      "**/node_modules/**"
+    ],
+    "rewrites": [
+      {
+        "source": "**",
+        "destination": "/index.html"
+      }
+    ]
+  }
+}
