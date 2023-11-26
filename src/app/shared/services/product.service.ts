@@ -93,7 +93,7 @@ export class ProductService {
   }
 
   createOrder(data: { product: string, address: string, phone: string }) {
-    return this.http.post<{ success: boolean, message?: string }>(environment.apiURL + 'order-pizza', data)
+    return this.http.post<{ success: boolean, message?: string }>(`https://testologia.site/order-pizza`, data)
 
     // return this.products.find(item => (item.id === id))
   }
