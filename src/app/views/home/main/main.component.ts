@@ -2,7 +2,6 @@ import {AfterViewInit, Component, OnDestroy, OnInit, ViewChild} from '@angular/c
 import {CartService} from "../../../shared/services/cart.service";
 import {from, map, Observable, Subscription} from "rxjs";
 import {PopupComponent} from "../../../shared/components/popup/popup.component";
-import {environment} from "../../../../environments/environment";
 
 @Component({
   selector: 'app-main',
@@ -61,6 +60,7 @@ export class MainComponent implements OnInit, AfterViewInit, OnDestroy {
   }
 
   ngAfterViewInit() {
+    console.log('hello')
     // setTimeout(() => {
     //   this.popupComponent.open()
     // }, 2000)
