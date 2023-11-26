@@ -47,7 +47,6 @@ export class MainComponent implements OnInit, AfterViewInit, OnDestroy {
   private subscription: Subscription | null = null
 
   ngOnInit() {
-    console.log(environment.production)
     this.subscription = this.observable
 
       .pipe(
@@ -62,9 +61,9 @@ export class MainComponent implements OnInit, AfterViewInit, OnDestroy {
   }
 
   ngAfterViewInit() {
-    setTimeout(() => {
-      this.popupComponent.open()
-    }, 2000)
+    // setTimeout(() => {
+    //   this.popupComponent.open()
+    // }, 2000)
   }
 
   ngOnDestroy() {
